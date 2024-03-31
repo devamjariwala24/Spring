@@ -6,6 +6,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import project.springboot.SpringBoot.project.entity.Department;
+import project.springboot.SpringBoot.project.error.DepartmentNotFoundException;
 import project.springboot.SpringBoot.project.service.DepartmentService;
 
 import java.util.List;
@@ -35,7 +36,7 @@ public class DepartmentController {
     }
 
     @GetMapping("/departments/{id}")
-    public Department fetchDepartmentByID(@PathVariable("id") Long departmentId){
+    public Department fetchDepartmentByID(@PathVariable("id") Long departmentId) throws DepartmentNotFoundException {
         logger.info("Inside the fetchDepartmentByID method of DepartmentController Class");
         return departmentService.fetchDepartmentById(departmentId);
     }
