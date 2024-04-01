@@ -7,16 +7,15 @@ import java.util.List;
 
 public interface DepartmentService {
 
-    public Department saveDepartment(Department department);
+    Department saveDepartment(Department department);
 
-    public List<Department> fetchDepartmentList();
+    List<Department> fetchDepartmentList();
 
-    public Department fetchDepartmentById(Long departmentId) throws DepartmentNotFoundException;
+    Department fetchDepartmentById(Long departmentId) throws DepartmentNotFoundException;
 
+    void deleteDepartmentById(Long departmentId);
 
-    public void deleteDepartmentById(Long departmentId);
+    Department updateDepartment(Long departmentId, Department department);
 
-    public Department updateDepartment(Long departmentId, Department department);
-
-    public Department fetchDepartmentByName(String departmentName);
+    Department fetchDepartmentByName(String departmentName);
 }
